@@ -27,38 +27,47 @@ return {
 
   -- ------------------------------------------
   -- Startup Dashboard
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " ██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗",
-        " ██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║",
-        " ██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║",
-        " ██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║",
-        " ██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║",
-        " ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝",
-      }
-      return opts
-    end,
-  },
+  -- {
+  --   "goolord/alpha-nvim",
+  --   opts = function(_, opts)
+  --     -- customize the dashboard header
+  --     opts.section.header.val = {
+  --       " ██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗",
+  --       " ██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║",
+  --       " ██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║",
+  --       " ██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║",
+  --       " ██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║",
+  --       " ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝",
+  --     }
+  --     return opts
+  --   end,
+  -- },
   -- ------------------------------------------
 
   -- ------------------------------------------
   -- `fd` alternative to the `ESC` key
+  -- {
+  --   "max397574/better-escape.nvim",
+  --   event = "InsertCharPre",
+  --   opts = {
+  --     timeout = vim.o.timeoutlen,
+  --     default_mappings = true,
+  --     mappings = {
+  --       i = { f = { d = "<Esc>" } },
+  --       c = { f = { d = "<Esc>" } },
+  --       t = { f = { d = "<Esc>" } },
+  --       v = { f = { d = "<Esc>" } },
+  --       s = { f = { d = "<Esc>" } },
+  --     },
+  --   },
+  -- },
+  -- `fd` alternative to the `ESC` key
+  -- seems to work better than better-escape.nvim
   {
-    "max397574/better-escape.nvim",
+    "TheBlob42/houdini.nvim",
     event = "InsertCharPre",
     opts = {
-      timeout = vim.o.timeoutlen,
-      default_mappings = true,
-      mappings = {
-        i = { f = { d = "<Esc>" } },
-        c = { f = { d = "<Esc>" } },
-        t = { f = { d = "<Esc>" } },
-        v = { f = { d = "<Esc>" } },
-        s = { f = { d = "<Esc>" } },
-      },
+      mappings = { "fd" },
     },
   },
   -- ------------------------------------------
@@ -146,7 +155,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       ---@type false | "classic" | "modern" | "helix"
-      preset = "helix",
+      preset = "classic",
     },
   },
   -- ------------------------------------------
@@ -159,7 +168,7 @@ return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "astrodark",
     },
   },
   -- ------------------------------------------
@@ -175,7 +184,7 @@ return {
         opt = {
           spell = true, -- sets vim.opt.spell
           wrap = true, -- sets vim.opt.wrap
-          guifont = "Fira Code:h16", -- neovide font family & size
+          guifont = "Fira Code:h14", -- neovide font family & size
         },
         -- configure global vim variables: vim.g
         g = {
